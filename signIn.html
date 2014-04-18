@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gael Report</title>
+        <meta name='viewport' content="minimum-scale=.98; maximum-scale=5; initial-scale=.98; user-scalable=no; width=1024">
+        
+        <link rel="stylesheet" type="text/css" href="gaelStyles.css">
+        <style>
+            body {background-color:  maroon;}
+            table,th,td{
+                border: 2px solid gold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="TitleBar">
+            <b>The Gael Report</b>
+        </div>
+        <div id="menuBar">
+            <div id="home button">
+            <a href="signin.html"><button type="button" style="float:right">Sign in/Signup</button></a>
+            </div>
+            <div align= "center" id=search>
+            <form action="results.php" method="get">
+            <input  name="result" type="text">
+            <font color="white">Search by: </font>
+            <select name="searchBy">
+                <option value="First_Name">First Name</option>
+                <option value="Last_Name">Last Name</option>
+                <option value="Height">height</option>                
+                <option value="Sport">sport</option>
+                <option value="City">City</option>
+                <option value="State_Country">State/Country</option>
+                <option value="Major">Major</option>
+            </select>
+            <button type="submit">Select</button>
+            </form>
+            </div>
+            </div>
+            <table id="signUp" style="width:750px" align= "center">
+                <tr><td><h3 align= "center">Sign in</h3></td>
+                    <td><h3 align= "center">Sign up</h3></td>
+                </tr>
+                <tr>
+                <td>
+                    <form>
+                        Username: <input type="text" name="username"><br>
+                        Password: <input type="password" name="pass"><br>
+                        <button type="submit" id="signButton">sign in</button>
+                    </form>
+                    </td>
+                <td >
+                    <form>
+                        Username: <input type="text" name="username"><br>
+                        Password: <input type="password" name="pass"><br>
+                        Confirm Password: <input type="password" name="conPass"><br>
+                        email:<input type="email" name="email"><br>
+                        <button type="submit" id="signButton">sign up</button>
+                    </form></td>		
+                </tr>
+                
+            </table>
+    </body>
+</html>
