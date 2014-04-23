@@ -36,7 +36,7 @@
                   var item = test[i];
                     item.innerText = "Information About " +div.innerHTML;  
                 }*/
-                alert("test");
+                
                 window.location = "UserHomePage.php?tm="+divid;
                 
             }
@@ -101,7 +101,7 @@
                     $sportname = $con->query($query.$row[0]."'");
                     $rowSN = $sportname->fetch_row();
 
-                    printf("<td id='teamBar%d' class='teamBar' onmouseover='teamBarMouseOver(%d)' onmouseout='teamBarMouseOut(%d)' onclick='toggleDiv('%s')'>%s</td>", $cnt,$cnt,$cnt,$row[0], $rowSN[0]);
+                    printf("<td id='teamBar%d' class='teamBar' onmouseover='teamBarMouseOver(%d)' onmouseout='teamBarMouseOut(%d)' onclick=\"toggleDiv('%s')\">%s</td>", $cnt,$cnt,$cnt,$row[0], $rowSN[0]);
                   }
 
                   $con->close();
