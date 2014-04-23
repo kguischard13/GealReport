@@ -54,7 +54,7 @@
         <div>
         <div id="menuBar">
             <div id="home button">
-            <a href="signin.html"><button type="button" style="float:right">Sign in/Signup</button></a>
+            <a href="signin.php"><button type="button" style="float:right">Sign in/Signup</button></a>
             </div>
             <div align= "center" id=search>
             <form action="results.php" method="get">

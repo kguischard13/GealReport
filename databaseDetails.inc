@@ -4,4 +4,5 @@
 	$username = 'root';
 	$password = 'root';
 	$dbname = 'Project Website';
+	$currUserID = 1;
 ?>
