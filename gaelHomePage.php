@@ -1,6 +1,13 @@
 <?php 
   include("databaseDetails.inc");
-?>
+
+  session_start();
+
+  if (isset($_SESSION['UserId'])) {
+    $currUserID = $_SESSION['UserId'];
+    header("Location: UserHomePage.php");
+  }
+  ?>
 
 
 <!DOCTYPE html>
@@ -46,7 +53,7 @@
     <div style='min-width: 1000px'>
 
         <div id="TitleBar">
-            <b>The Gael Report Homepage </b>
+            <b>Gael Report Homepage </b>
         </div>
 
 
@@ -73,7 +80,7 @@
             </form>
             </div>
         <div id="divTeamBar">
-           <font color="white" align="center"><table>
+           <font color="white" align="center"><table >
                 <tr>
                     <td id="teamBar1" class="teamBar" onmouseover="teamBarMouseOver(1)" onmouseout="teamBarMouseOut(1)" onclick="toggleDiv('0', 'dataDiv')">Baseball</td>
                     <td id="teamBar2" class="teamBar" onmouseover="teamBarMouseOver(2)" onmouseout="teamBarMouseOut(2)" onclick="toggleDiv('1', 'dataDiv')">Men's Basketball</td>

@@ -20,8 +20,7 @@
 }
 #Teams{
     overflow: scroll;
-    width: 25%;
-    
+    width: auto;
     max-height: 500px;
     float: left;
     border: 2px gold solid;
@@ -29,12 +28,10 @@
     margin-top: 20px;
     text-align: center;
     color: white;
-    
 }
 #Athletes{
     overflow: scroll;
     width: 20%;
-    
     max-height: 500px;
     float: right;
     border: 2px gold solid;
@@ -46,32 +43,20 @@
 #footer{
     border:2px gold solid;
 }
-#signIn{
-    float: right
-}
+
 #menuBar{
     height: auto;
     background-color: #000000;
     border:2px gold solid;
 }
 .teamBar{
-    
     background-color: #000000;
     border:2px gold solid;
-    width: 17%;
 }
 #divTeamBar{
     overflow: scroll;
     width: 100%;
 }
-#twitter{
-    float:right;
-    width: 250px;
-    height: 165px;
-    border: 4px black solid;
-    
-}
-
 #signUp{
     border:4px gold solid;
     background-color:black;
@@ -85,19 +70,6 @@
     float: right;
     margin-top:10px
 }
-#searchField{
-    margin-top: 25%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: black;
-    width: 300px;
-    height: 300px;
-    color: white;
-    text-align: right;
-    padding-right: 40px;
-    border-color: gold;
-    border-style: groove
-}
 #athleteBio{
     margin-top: 25%;
     margin-left: auto;
@@ -109,38 +81,51 @@
     border-color: gold;
     border-style: groove;
 }
-#title{
-    font-size-adjust: 50
-}
 #sportCustom{
-    margin-top: 25%;
+    overflow:scroll;
+    margin-top: 100px;
     background-color: black;
     width: 250px;
-    height: auto;
+    max-height: 250px;
     color: white;
     border-color: gold;
     border-style: groove;
-    float: left
+    float: left;
+    text-align: center;
+}#newTeamCustom{
+    overflow:scroll;
+    margin-top: 100px;
+    background-color: black;
+    width: 320px;
+    max-height: 250px;
+    color: white;
+    border-color: gold;
+    border-style: groove;
+    float: left;
+    text-align: center;
 }
 #athleteCustom{
-    margin-top: 25%;
+    overflow:scroll;
+    margin-top: 170px;
     background-color: black;
     width: 250px;
-    height: auto;
+    max-height: 200px;
     color: white;
     border-color: gold;
     border-style: groove;
-    float:right 
+    float: right;
+    text-align: center;
 }
 #userSettings{
-    margin-top: 50%;
+    overflow:scroll;
+    margin-top: 400px;
+    margin-left: 45%;
     background-color: black;
-    width: 250px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    width: 300px;
+    max-height: 250px;
     color: white;
     border-color: gold;
     border-style: groove;
-    float:right 
+    float:center;
+    text-align: center;   
 }

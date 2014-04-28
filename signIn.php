@@ -22,21 +22,22 @@
         }
 
         $con->close();
-    }
 
-
-    if (isset($_SESSION['UserId'])) {
+        if (isset($_SESSION['UserId'])) {
                 header("Location: UserHomePage.php");
-    }
-    else{
-        if ($email != "") {
-                    echo "<span style='color:red;'>LOGIN FAILURE: ".$email." is not an authorized user.</span><br>\n";
-        
-                }
-                else{
-                    echo "";
-                }
+        }
+        else{
+            if ($email != "") {
+                echo "<span style='color:red;'>LOGIN FAILURE: ".$email." is not an authorized user or wrong password</span><br>\n";
             }
+            else{
+                echo "";
+            }
+        }
+    }
+
+
+    
 
 ?>
 
@@ -55,7 +56,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style='min-width: 1000px'>
 
         <?php
 
@@ -98,8 +99,8 @@
                     </form>
                     </td>
                 <td >
-                    <form method='POST' action='addnewuser.php'>
-                        Email:<input type="email" name="email"><br>
+                    <form method='POST' action='addNewUser.php'>
+                        Email:<input type="email" name="SUemail"><br>
                         First Name: <input type="text" name="fname"><br>
                         Last Name: <input type="text" name="lname"><br>
                         Password: <input type="password" name="pass1"><br>

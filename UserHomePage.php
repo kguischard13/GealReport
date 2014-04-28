@@ -54,7 +54,7 @@
     <div style='min-width: 1000px'>
 
         <div id="TitleBar">
-            <b>The Gael Report Homepage </b>
+            <b>Gael Report User Homepage </b>
         </div>
 
 
@@ -83,7 +83,7 @@
                 </button>
               </a>
             </div>
-            <div id="home button" style='float: right'>
+            <div style='float: right'>
             <a href="logout.php"><button type="button" >LogOut</button></a>
             </div>
             <div align= "center" id=search>
@@ -104,8 +104,8 @@
             </div>
 
             
-        <div id="divTeamBar">
-           <font color="white" align="center"><table>
+        <!-- <div id="divTeamBar"> -->
+           <font color="white" align="center"><table id="divTeamBar">
                 <tr>
                     <?php
                     $con = new mysqli($server,$username,$password, $dbname);
@@ -133,10 +133,11 @@
 
                     
                     ?>
-                    
+            
                 </tr>
+
             </table></font> 
-        </div>
+        <!-- </div> -->
       </div>
       <!-- end of two-->
         <nobr><hr color= "black" size = "4"></nobr>
