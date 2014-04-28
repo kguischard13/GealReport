@@ -46,11 +46,12 @@
         <title>Gael Report</title>
         <meta name='viewport' content="minimum-scale=.98; maximum-scale=5; initial-scale=.98; user-scalable=no; width=1024">
         
-        <link rel="stylesheet" type="text/css" href="gaelStyles.css">
+        <link rel="stylesheet" type="text/css" href="CSS/gaelStyles.css">
         <style>
             body {background-color:  maroon;}
             table,th,td{
-                border: 2px solid gold;
+                background-color: black;
+                border: 1px solid gold;
             }
         </style>
     </head>
@@ -65,7 +66,7 @@
         <div id="menuBar">
             <div id="home button">
                 <a href="gaelHomePage.php"><button type="button" style="float:left" >Home</button></a>
-            <a href="signin.html"><button type="button" style="float:right">Sign in/Signup</button></a>
+            <a href="signin.php"><button type="button" style="float:right">Sign in/Signup</button></a>
             </div>
             <div align= "center" id=search>
             <form action="results.php" method="get">
@@ -83,7 +84,7 @@
             <button type="submit">Select</button>
             </form>
             </div>
-            </div>
+        </div>
             <table id="signUp" style="width:750px" align= "center">
                 <tr><td><h3 align= "center">Sign in</h3></td>
                     <td><h3 align= "center">Sign up</h3></td>

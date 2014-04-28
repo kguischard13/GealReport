@@ -3,7 +3,7 @@
         <title>Gael Report</title>
         <meta name='viewport' content="minimum-scale=.98; maximum-scale=5; initial-scale=.98; user-scalable=no; width=1024">
         
-        <link rel="stylesheet" type="text/css" href="gaelStyles.css">
+        <link rel="stylesheet" type="text/css" href="CSS/gaelStyles.css">
         <style>
             body {background-color:  maroon;}
             table,th,{
@@ -15,10 +15,14 @@
         <div id="TitleBar">
             <b>The Gael Report Homepage </b>
         </div>
-                <a href="gaelHomePage.php"><button type="button" style="float:left" >Home</button></a>
-            <a href="signin.html"><button type="button" style="float:right">Sign in/Signup</button></a>
+        <div id="menuBar">
+            <div id="home button" style="float:left">
+                <a href="gaelHomePage.php"><button type="button">Home</button></a>
             </div>
-            <div align= "center" id=search>
+            <div id="home button" style='float: right'>
+            <a href="signin.php"><button type="button" >Sign In/Sign Up</button></a>
+            </div>
+            <div align= "center" id='search'>
             <form action="results.php" method="get">
             <input  name="result" type="text">
             <font color="white">Search by: </font>
@@ -34,8 +38,9 @@
             <button type="submit">Select</button>
             </form>
             </div>
-            
         </div>
+            
+        
         <div id="athleteCustom">
             <form>Kester<input type="checkbox"></form>
             <form>Evan<input type="checkbox"></form>

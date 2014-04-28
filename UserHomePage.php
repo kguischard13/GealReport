@@ -61,8 +61,30 @@
         <!-- main div -->
         <div>
         <div id="menuBar">
-            <div id="home button">
-            <a href="logout.php"><button type="button" style="float:right">LogOut</button></a>
+
+          <div id="Profile" style='float:left'>
+              <a href="Settings.php">
+                <button type="button">
+                  <?php
+                  $con = new mysqli($server,$username,$password, $dbname);
+          
+                  if (mysqli_connect_errno() ){
+                      echo "Couldnt connect ".mysql_connect_error();
+                  }
+
+                  $profile = $con->query("select Email from Users where UserId =".$currUserID);
+
+                  $row = $profile->fetch_row();
+                  printf("%s", $row[0]);
+
+                  $con->close();
+
+                  ?>
+                </button>
+              </a>
+            </div>
+            <div id="home button" style='float: right'>
+            <a href="logout.php"><button type="button" >LogOut</button></a>
             </div>
             <div align= "center" id=search>
             <form action="results.php" method="get">
@@ -80,6 +102,8 @@
             <button type="submit">Select</button>
             </form>
             </div>
+
+            
         <div id="divTeamBar">
            <font color="white" align="center"><table>
                 <tr>
