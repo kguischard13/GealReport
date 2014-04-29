@@ -24,8 +24,29 @@
         </div>
       <div id="menuBar">
             <div id="home button">
-            <a href="gaelHomePage.php"><button type="button" style="float:left" >Home</button></a>
-            <a href="signin.html"><button type="button" style="float:right">Sign in/Signup</button></a>
+
+            <?php
+                include("databaseDetails.inc");
+
+                session_start();
+
+                if (!isset($_SESSION['UserId'])) {
+                   printf("<a href=\"gaelHomePage.php\"><button type=\"button\" style=\"float:left\" >Home</button></a>");
+                    printf("<a href=\"signin.php\"><button type=\"button\" style=\"float:right\">Sign in/Signup</button></a>");
+                }else{
+                    $currUserID = $_SESSION['UserId'];
+
+          
+                  printf("<a href=\"UserHomePage.php\"><button type=\"button\" style=\"float:left\" >User Home Page</button></a>");
+                  printf("<a href=\"logout.php\"><button type=\"button\" style=\"float:right\">Log Out</button></a>");
+                    
+                }
+                  
+
+
+            ?>
+            
+            
             </div>
             <div align= "center" id=search>
             <form action="results.php" method="POST">
@@ -75,7 +96,7 @@
             echo "</div>";
         ?>
 
-        <div id='athleteBio'>
+        <div id='athleteBio' hidden>
 
         </div>
 

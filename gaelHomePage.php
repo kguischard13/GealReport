@@ -107,6 +107,7 @@
         <nobr><hr color= "black" size = "4"></nobr>
         
         
+        
 <!--        <a href="javascript:;" onclick="toggleDiv('mydiv');">Click to Expand</a>-->
 <!--        <div id="mydiv" style="display:none"><h3>Popup text<br>How does this look?</h3></div>-->
     
@@ -181,7 +182,7 @@
                   
                          for($i = 0; $i<$resCount; $i++){
                             $row2 = $res->fetch_row();
-                            printf("<tr> <td>%s %s</td> </tr>", $row2[1], $row2[2]);
+                            printf("<tr> <td>%d: %s %s</td> </tr>",$i+1, $row2[1], $row2[2]);
                          }
                          $con->close();
 

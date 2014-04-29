@@ -13,7 +13,15 @@ $(document).ready(function() {
 	});
 
 	$('.Players').click(function() {
+		
 		var divID = $(this).attr("id");
+		var num = parseInt(divID);
+
+
+		$.post("AthleteBio.php",{athID : num}, function(data, textStatus) {
+			$('#athleteBio').show();
+			$('#athleteBio').html(data);
+		});
 		
 
 	});

@@ -218,7 +218,7 @@
                   
                          for($i = 0; $i<$resCount; $i++){
                             $row2 = $res->fetch_row();
-                            printf("<tr> <td>%s %s</td> </tr>", $row2[1], $row2[2]);
+                            printf("<tr> <td>%d: %s %s</td> </tr>",$i+1, $row2[1], $row2[2]);
                          }
                          $con->close();
 
