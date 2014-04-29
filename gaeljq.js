@@ -12,9 +12,9 @@ $(document).ready(function() {
 		$(this).css("background-color", "black");
 	});
 
-	$('.Players').click(function(event) {
+	$('.Players').click(function() {
 		var divID = $(this).attr("id");
-		
+		alert(divID);
 
 	});
 });
