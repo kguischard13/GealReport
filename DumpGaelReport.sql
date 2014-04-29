@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: Apr 08, 2014 at 11:31 PM
+-- Generation Time: Apr 29, 2014 at 04:47 AM
 -- Server version: 5.5.34
 -- PHP Version: 5.5.10
 
@@ -22,7 +22,8 @@ USE `Project Website`;
 -- Table structure for table `athletes`
 --
 
-CREATE TABLE IF NOT EXISTS `athletes` (
+DROP TABLE IF EXISTS `athletes`;
+CREATE TABLE `athletes` (
   `AthleteID` int(20) NOT NULL AUTO_INCREMENT,
   `First_Name` text,
   `Last_Name` text,
@@ -413,7 +414,8 @@ INSERT INTO `athletes` (`AthleteID`, `First_Name`, `Last_Name`, `Year`, `Height`
 -- Table structure for table `athletesports`
 --
 
-CREATE TABLE IF NOT EXISTS `athletesports` (
+DROP TABLE IF EXISTS `athletesports`;
+CREATE TABLE `athletesports` (
   `athID` int(11) NOT NULL,
   `sportID` varchar(5) NOT NULL DEFAULT 'MB',
   PRIMARY KEY (`athID`,`sportID`),
@@ -832,7 +834,8 @@ DELIMITER ;
 -- Table structure for table `athposition`
 --
 
-CREATE TABLE IF NOT EXISTS `athposition` (
+DROP TABLE IF EXISTS `athposition`;
+CREATE TABLE `athposition` (
   `athID` int(11) NOT NULL,
   `Pos` varchar(15) NOT NULL DEFAULT 'Enter Position',
   PRIMARY KEY (`athID`,`Pos`),
@@ -1246,7 +1249,8 @@ INSERT INTO `athposition` (`athID`, `Pos`) VALUES
 -- Table structure for table `coaches`
 --
 
-CREATE TABLE IF NOT EXISTS `coaches` (
+DROP TABLE IF EXISTS `coaches`;
+CREATE TABLE `coaches` (
   `coachID` varchar(10) NOT NULL,
   `sportID` varchar(45) DEFAULT NULL,
   `First_Name` text,
@@ -1327,7 +1331,8 @@ INSERT INTO `coaches` (`coachID`, `sportID`, `First_Name`, `Last_Name`, `Graduat
 -- Table structure for table `FavoriteAthletes`
 --
 
-CREATE TABLE IF NOT EXISTS `FavoriteAthletes` (
+DROP TABLE IF EXISTS `FavoriteAthletes`;
+CREATE TABLE `FavoriteAthletes` (
   `Users_UserId` int(11) NOT NULL,
   `Athletes_athID` int(11) NOT NULL,
   KEY `fk_FavoriteAthletes_Users1_idx` (`Users_UserId`),
@@ -1340,7 +1345,8 @@ CREATE TABLE IF NOT EXISTS `FavoriteAthletes` (
 -- Table structure for table `FavoriteTeams`
 --
 
-CREATE TABLE IF NOT EXISTS `FavoriteTeams` (
+DROP TABLE IF EXISTS `FavoriteTeams`;
+CREATE TABLE `FavoriteTeams` (
   `Users_UserId` int(11) NOT NULL,
   `Sports_sportID` varchar(5) NOT NULL,
   PRIMARY KEY (`Users_UserId`,`Sports_sportID`),
@@ -1348,13 +1354,29 @@ CREATE TABLE IF NOT EXISTS `FavoriteTeams` (
   KEY `fk_FavoriteTeams_Sports1_idx` (`Sports_sportID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `FavoriteTeams`
+--
+
+INSERT INTO `FavoriteTeams` (`Users_UserId`, `Sports_sportID`) VALUES
+(1, 'MBB'),
+(1, 'MS'),
+(1, 'WBB'),
+(1, 'WS'),
+(1, 'WSB'),
+(1, 'WV'),
+(5, 'MB'),
+(5, 'MBB'),
+(5, 'MCCTF');
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `majors`
 --
 
-CREATE TABLE IF NOT EXISTS `majors` (
+DROP TABLE IF EXISTS `majors`;
+CREATE TABLE `majors` (
   `athID` int(11) NOT NULL,
   `Major` varchar(60) DEFAULT 'Undecided',
   PRIMARY KEY (`athID`)
@@ -1747,7 +1769,8 @@ INSERT INTO `majors` (`athID`, `Major`) VALUES
 -- Table structure for table `schedule`
 --
 
-CREATE TABLE IF NOT EXISTS `schedule` (
+DROP TABLE IF EXISTS `schedule`;
+CREATE TABLE `schedule` (
   `sportID` varchar(5) NOT NULL,
   `Date` date NOT NULL,
   `Time` time NOT NULL,
@@ -2122,7 +2145,8 @@ DELIMITER ;
 -- Table structure for table `sports`
 --
 
-CREATE TABLE IF NOT EXISTS `sports` (
+DROP TABLE IF EXISTS `sports`;
+CREATE TABLE `sports` (
   `sportID` varchar(5) NOT NULL,
   `Sport_Name` text,
   `Season` text,
@@ -2158,7 +2182,8 @@ INSERT INTO `sports` (`sportID`, `Sport_Name`, `Season`) VALUES
 -- Table structure for table `stats`
 --
 
-CREATE TABLE IF NOT EXISTS `stats` (
+DROP TABLE IF EXISTS `stats`;
+CREATE TABLE `stats` (
   `sportID` varchar(6) NOT NULL,
   `Win_Loss_Percent` decimal(10,0) DEFAULT NULL,
   `Num_Games` int(11) DEFAULT '0',
@@ -2197,14 +2222,28 @@ INSERT INTO `stats` (`sportID`, `Win_Loss_Percent`, `Num_Games`, `Num_Athletes`,
 -- Table structure for table `Users`
 --
 
-CREATE TABLE IF NOT EXISTS `Users` (
+DROP TABLE IF EXISTS `Users`;
+CREATE TABLE `Users` (
   `UserId` int(11) NOT NULL AUTO_INCREMENT,
   `First_Name` text,
   `Last_Name` text,
   `Password` text,
   `Email` text,
+  `AccountType` int(11) DEFAULT '1',
   PRIMARY KEY (`UserId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `Users`
+--
+
+INSERT INTO `Users` (`UserId`, `First_Name`, `Last_Name`, `Password`, `Email`, `AccountType`) VALUES
+(1, 'Kester', 'Guischard', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'kguischard1@iona.edu', 1),
+(2, 'First', 'Admin', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'admin1', 0),
+(3, 'Evan', 'Johnson', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'ejohnson1@iona.edu', 1),
+(5, 'John', 'Doe', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'jdoe@yahoo.com', 1),
+(7, 'Jane', 'Doe', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'janedoe@yahoo.com', 1),
+(11, 'kester', 'grimm', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'kgrim@iona.edu', 1);
 
 --
 -- Constraints for dumped tables
@@ -2216,10 +2255,3 @@ CREATE TABLE IF NOT EXISTS `Users` (
 ALTER TABLE `FavoriteAthletes`
   ADD CONSTRAINT `fk_FavoriteAthletes_Athletes1` FOREIGN KEY (`Athletes_athID`) REFERENCES `mydb`.`Athletes` (`athID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_FavoriteAthletes_Users1` FOREIGN KEY (`Users_UserId`) REFERENCES `mydb`.`Users` (`UserId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `FavoriteTeams`
---
-ALTER TABLE `FavoriteTeams`
-  ADD CONSTRAINT `fk_FavoriteTeams_Sports1` FOREIGN KEY (`Sports_sportID`) REFERENCES `mydb`.`Sports` (`sportID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_FavoriteTeams_Users1` FOREIGN KEY (`Users_UserId`) REFERENCES `mydb`.`Users` (`UserId`) ON DELETE NO ACTION ON UPDATE NO ACTION;

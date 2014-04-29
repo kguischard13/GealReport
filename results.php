@@ -56,7 +56,7 @@
             $result = $_POST['result'];
             $searchBy = $_POST['searchBy'];
             
-            $athletes = mysqli_query($con,"select * FROM athletes join majors join athletesports join sports on athletes.AthleteID = majors.athID and athletes.AthleteID = athletesports.athID and sports.sportID = athletesports.sportID and ".$searchBy." LIKE '".$result."'");
+            $athletes = mysqli_query($con,"select * FROM athletes join majors join athletesports join sports on athletes.AthleteID = majors.athID and athletes.AthleteID = athletesports.athID and sports.sportID = athletesports.sportID and ".$searchBy." LIKE '%".$result."%'");
             echo"<div >";
             echo "<table id='Teams'>
              <tr><th>Name</th><th>Sport</th></tr>";

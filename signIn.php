@@ -96,7 +96,7 @@
                     </td>
                 <td >
                     <form method='POST' action='addNewUser.php'>
-                        Email:<input type="email" name="SUemail"><br>
+                        Email:<input type="email" name="email"><br>
                         First Name: <input type="text" name="fname"><br>
                         Last Name: <input type="text" name="lname"><br>
                         Password: <input type="password" name="pass1"><br>

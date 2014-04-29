@@ -14,8 +14,6 @@ if ($pass != $pass2) {
 	Header("Location: signIn.php");
 }
 
-}
-
 $con = new mysqli($server,$username,$password, $dbname);
 if (mysqli_connect_errno() ){echo "Couldnt connect ".mysql_connect_error();}
 
@@ -34,11 +32,15 @@ $query = "Insert Into Users (First_Name, Last_Name, Password, Email) Values ('".
 $res=$con->query($query);
 
 if($res){
-	printf("Sign Up was successful ");
+	printf("Sign Up was successful. ");
 	printf("Please <a href='gaelHomePage.php'>Click Here</a>");
 }
 
 $con->close();
+
+}
+
+
 // Header("Location: gaelHomePage.php");
 
 ?>
