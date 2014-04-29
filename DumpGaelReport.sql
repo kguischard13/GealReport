@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: Apr 29, 2014 at 04:47 AM
+-- Generation Time: Apr 29, 2014 at 04:52 AM
 -- Server version: 5.5.34
 -- PHP Version: 5.5.10
 
@@ -13,8 +13,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `Project Website`
 --
-CREATE DATABASE IF NOT EXISTS `Project Website` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `Project Website`;
 
 -- --------------------------------------------------------
 
@@ -22,7 +20,6 @@ USE `Project Website`;
 -- Table structure for table `athletes`
 --
 
-DROP TABLE IF EXISTS `athletes`;
 CREATE TABLE `athletes` (
   `AthleteID` int(20) NOT NULL AUTO_INCREMENT,
   `First_Name` text,
@@ -414,7 +411,6 @@ INSERT INTO `athletes` (`AthleteID`, `First_Name`, `Last_Name`, `Year`, `Height`
 -- Table structure for table `athletesports`
 --
 
-DROP TABLE IF EXISTS `athletesports`;
 CREATE TABLE `athletesports` (
   `athID` int(11) NOT NULL,
   `sportID` varchar(5) NOT NULL DEFAULT 'MB',
@@ -834,7 +830,6 @@ DELIMITER ;
 -- Table structure for table `athposition`
 --
 
-DROP TABLE IF EXISTS `athposition`;
 CREATE TABLE `athposition` (
   `athID` int(11) NOT NULL,
   `Pos` varchar(15) NOT NULL DEFAULT 'Enter Position',
@@ -1249,7 +1244,6 @@ INSERT INTO `athposition` (`athID`, `Pos`) VALUES
 -- Table structure for table `coaches`
 --
 
-DROP TABLE IF EXISTS `coaches`;
 CREATE TABLE `coaches` (
   `coachID` varchar(10) NOT NULL,
   `sportID` varchar(45) DEFAULT NULL,
@@ -1331,7 +1325,6 @@ INSERT INTO `coaches` (`coachID`, `sportID`, `First_Name`, `Last_Name`, `Graduat
 -- Table structure for table `FavoriteAthletes`
 --
 
-DROP TABLE IF EXISTS `FavoriteAthletes`;
 CREATE TABLE `FavoriteAthletes` (
   `Users_UserId` int(11) NOT NULL,
   `Athletes_athID` int(11) NOT NULL,
@@ -1345,7 +1338,6 @@ CREATE TABLE `FavoriteAthletes` (
 -- Table structure for table `FavoriteTeams`
 --
 
-DROP TABLE IF EXISTS `FavoriteTeams`;
 CREATE TABLE `FavoriteTeams` (
   `Users_UserId` int(11) NOT NULL,
   `Sports_sportID` varchar(5) NOT NULL,
@@ -1375,7 +1367,6 @@ INSERT INTO `FavoriteTeams` (`Users_UserId`, `Sports_sportID`) VALUES
 -- Table structure for table `majors`
 --
 
-DROP TABLE IF EXISTS `majors`;
 CREATE TABLE `majors` (
   `athID` int(11) NOT NULL,
   `Major` varchar(60) DEFAULT 'Undecided',
@@ -1769,7 +1760,6 @@ INSERT INTO `majors` (`athID`, `Major`) VALUES
 -- Table structure for table `schedule`
 --
 
-DROP TABLE IF EXISTS `schedule`;
 CREATE TABLE `schedule` (
   `sportID` varchar(5) NOT NULL,
   `Date` date NOT NULL,
@@ -2145,7 +2135,6 @@ DELIMITER ;
 -- Table structure for table `sports`
 --
 
-DROP TABLE IF EXISTS `sports`;
 CREATE TABLE `sports` (
   `sportID` varchar(5) NOT NULL,
   `Sport_Name` text,
@@ -2182,7 +2171,6 @@ INSERT INTO `sports` (`sportID`, `Sport_Name`, `Season`) VALUES
 -- Table structure for table `stats`
 --
 
-DROP TABLE IF EXISTS `stats`;
 CREATE TABLE `stats` (
   `sportID` varchar(6) NOT NULL,
   `Win_Loss_Percent` decimal(10,0) DEFAULT NULL,
@@ -2222,7 +2210,6 @@ INSERT INTO `stats` (`sportID`, `Win_Loss_Percent`, `Num_Games`, `Num_Athletes`,
 -- Table structure for table `Users`
 --
 
-DROP TABLE IF EXISTS `Users`;
 CREATE TABLE `Users` (
   `UserId` int(11) NOT NULL AUTO_INCREMENT,
   `First_Name` text,
