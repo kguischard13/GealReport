@@ -87,14 +87,14 @@
             <a href="logout.php"><button type="button" >LogOut</button></a>
             </div>
             <div align= "center" id=search>
-            <form action="results.php" method="get">
+            <form action="results.php" method="POST">
             <input  name="result" type="text">
             <font color="white">Search by: </font>
             <select name="searchBy">
                 <option value="First_Name">First Name</option>
                 <option value="Last_Name">Last Name</option>
-                <option value="Height">height</option>                
-                <option value="Sport">sport</option>
+                <option value="Height">Height</option>                
+                <option value="Sport_Name">Sport</option>
                 <option value="City">City</option>
                 <option value="State_Country">State/Country</option>
                 <option value="Major">Major</option>

@@ -3,7 +3,7 @@
         <title>Gael Report</title>
         <meta name='viewport' content="minimum-scale=.98; maximum-scale=5; initial-scale=.98; user-scalable=no; width=1024">
         
-        <link rel="stylesheet" type="text/css" href="gaelStyles.css">
+        <link rel="stylesheet" type="text/css" href="CSS/gaelStyles.css">
         <style>
             body {background-color:  maroon;}
             table,th,{
@@ -19,14 +19,14 @@
             <a href="gaelHomePage.php"><button type="button" style="float:left" >Home</button></a>
             <a href="signin.html"><button type="button" style="float:right">Sign in/Signup</button></a>
             <div align= "center" id=search>
-            <form action="results.php" method="get">
+            <form action="results.php" method="POST">
             <input  name="result" type="text">
             <font color="white">Search by: </font>
             <select name="searchBy">
                 <option value="First_Name">First Name</option>
                 <option value="Last_Name">Last Name</option>
-                <option value="Height">height</option>                
-                <option value="Sport">sport</option>
+                <option value="Height">Height</option>                
+                <option value="Sport_Name">Sport</option>
                 <option value="City">City</option>
                 <option value="State_Country">State/Country</option>
                 <option value="Major">Major</option>
