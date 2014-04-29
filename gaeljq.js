@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 	$('.Players').click(function() {
 		var divID = $(this).attr("id");
-		alert(divID);
+		
 
 	});
 });

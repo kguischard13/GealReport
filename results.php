@@ -75,6 +75,10 @@
             echo "</div>";
         ?>
 
+        <div id='athleteBio'>
+
+        </div>
+
 
     
     </body>

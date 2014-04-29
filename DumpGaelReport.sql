@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: Apr 29, 2014 at 04:57 AM
+-- Generation Time: Apr 29, 2014 at 05:03 AM
 -- Server version: 5.5.34
 -- PHP Version: 5.5.10
 
@@ -1329,7 +1329,7 @@ INSERT INTO `coaches` (`coachID`, `sportID`, `First_Name`, `Last_Name`, `Graduat
 
 CREATE TABLE `FavoriteAthletes` (
   `Users_UserId` int(11) NOT NULL,
-  `Athletes_athID` int(11) NOT NULL,
+  `Athletes_athID` int(20) NOT NULL,
   KEY `fk_FavoriteAthletes_Users1_idx` (`Users_UserId`),
   KEY `fk_FavoriteAthletes_Athletes1_idx` (`Athletes_athID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
