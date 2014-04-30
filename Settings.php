@@ -23,8 +23,12 @@
         <script src='gaeljq.js'></script>
         <style>
             body {background-color:  maroon;}
-            table,th,{
+            table,th,td{
                 border: 2px solid gold;
+                color: white;
+            }
+            h2,h3{
+                color: gold
             }
         </style>
     </head>
@@ -57,9 +61,75 @@
             </div>
         </div>
             
-        
+                <?php
+            $con = mysqli_connect($server,$username,$password, $dbname);
+            if (mysqli_connect_errno() ){echo "Couldnt connect ".mysql_connect_error();}
+            $account = mysqli_query($con,"select AccountType from Users where UserID =" .$currUserID);
+            $accountType = mysqli_fetch_array($account);
+            if ($accountType['AccountType'] == '0') {
+            echo'<div id="adminSettings">';
+            echo'<center><h2>Admin Tools</h2></center>';
+            echo'<table>';
+            echo'<tr><td>';
+            echo'        <center><h3>Add Athlete</h3></center>';
+            echo'        <hr color="white" size ="4">';
+            echo'        <br>';
+            echo'        <form method="POST" action="addAthlete.php">';
+            echo'        First Name: <br><input type="text" name="fname"><br>';
+            echo'        Last Name: <br><input type="text" name="lname"><br>';
+            echo'        Year:<br><input type="text" name="year"><br>';
+            echo'        Height: <br><input type="text" name="height"><br>';
+            echo'        Weight: <br><input type="text" name="weight"><br>';
+            echo'        City: <br><input type="text" name="city"><br>';
+            echo'        State/Country:<br> <input type="text" name="stateCountry"><br>';
+            echo'        High School: <br><input type="text" name="highSchool"><br>';
+            echo'        Gender: ';
+            echo'        <input type="radio" name="gender" value="M">Male';
+            echo'        <input type="radio" name="gender" value="F">Female<br>';
+            echo'        Sport(abbreviation): <br><input type="text" name="sport"><br>';
+            echo'        <button type="submit" id="signButton">Add</button><br>';
+            echo'    </form>';
+            echo'</td>';
+
+            echo'<td>';
+            echo'<center><h3>Add Coach</h3></center>';
+            echo'        <hr color="white" size ="4">';
+            echo'        <br>';
+            echo'        <form method="POST" action="addCoach.php">';
+            echo'        First Name: <br><input type="text" name="fname"align="right"><br>';
+            echo'        Last Name:<br><input type="text" name="lname"align="right"><br>';
+            echo'        coach ID: <br><input type="text" name="coachID"align="right"><br>';
+            echo'        Sport(abbreviation): <br><input type="text" name="sport"><br>';
+            echo'        Graduation Year:<br><input type="text" name="gradYear"align="right"><br>';
+            echo'        Alma Mater:<br><input type="text" name="almaMater"align="right"><br>';
+            echo'        Position: <br><input type="text" name="position"align="right"><br>';
+            echo'        Phone: <br><input type="text" name="phone"align="right"><br>';
+            echo'        <button type="submit" id="signButton">Add</button><br>';
+            echo'    </form>';
+            echo'</td>';
+
+            echo'<td>';
+            echo'<center><h3>Manage Users</h3></center>';
+            echo'        <hr color="white" size ="4">';
+            echo'        <br>';
+            echo'        <form method="POST" action="updateUser.php">';
+            echo'        Email:<br> <input type="text" name="email"><br>';
+            echo'        New password:<br><input type="password" name="newpass"><br>';
+            echo'        Delete user:<br>';
+            echo'        <input type="radio" name="delete" value="yes">Yes';
+            echo'        <input type="radio" name="delete" value="no">No<br>';
+            echo'        <button type="submit" id="signButton">Update User</button><br>';
+            echo'    </form>';
+            echo'</td>';
+            echo'</tr>';
+            echo'</table>';
+            echo'</div>' ;
+            };
+
+
+         ?>
         <div id="athleteCustom">
-            <center><p>User Information</p></center>
+            <center><h3>User Information</h3></center>
             <hr color='white' size ="4">
             <br>
             <?php
@@ -80,7 +150,7 @@
             <!-- <button type="submit" style="float:right">delete selected</button> -->
         </div>
         <div id="sportCustom">
-            <center><p>Favorite Teams</p></center>
+            <center><h3>Favorite Teams</h3></center>
             <hr color='white' size ="4">
             <br>
             <form method = 'POST' action='deleteTeam.php'>
@@ -112,7 +182,7 @@
             </form>     
         </div>
         <div id='newTeamCustom' hidden>
-            <center><p>Select As Many As You Want</p></center>
+            <center><h3>Select As Many As You Want</h3></center>
             <hr color='white' size ="4">
             <br>
             <form method = 'POST' action='addTeam.php'>
@@ -174,7 +244,7 @@
         </div>
 
         <div id="userSettings"> 
-            <center><p>Change Information</p></center>
+            <center><h3>Change Information</h3></center>
             <hr color='white' size ="4">
             <br>
 
@@ -187,5 +257,7 @@
                 <button type="submit" id="signButton">Change</button><br>
             </form>
         </div>
+
+        
     </body>
 </html>

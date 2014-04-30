@@ -130,3 +130,12 @@
     float:center;
     text-align: center;   
 }
+#adminSettings{
+    color: white;
+    background-color: black;
+    min-height: 500px;
+    width: 500px;
+    border-color: gold;
+    border-style: groove;
+    margin-left: 34%;
+}
